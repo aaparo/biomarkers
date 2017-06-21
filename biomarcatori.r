@@ -6,7 +6,8 @@ if(!require("gplots")){install.packages("gplots")}
 if(!require("fpc")){install.packages("fpc")}
 if(!require("cluster")){install.packages("cluster")}
 
-options(warn = -1) #nascondo i warning, presenti a causa degli NA nel dataset di partenza
+#nascondo i warning, presenti a causa degli NA nel dataset di partenza
+options(warn = -1)
 
 dir.create("./immagini", showWarnings = FALSE)
 dir.create("./immagini/plot base", showWarnings = FALSE)
@@ -200,7 +201,7 @@ ggsave(filename="./immagini/biomarcatori/CIT.jpg", width=8.5, dpi=300)
 
 #----------------------------CLUSTERING
 dbclear = db
-dbclear$SA = NULL #anche se setto l'unico valore NA a 0 non appera tra i più correlati (anzi tra i meno)
+dbclear$SA = NULL #anche se setto l'unico valore NA a 0 non appera tra i piÃ¹ correlati (anzi tra i meno)
 dbclear$`C5:1`= NULL
 dbclear$`C10:2`= NULL
 dbclear$`C18-OH`= NULL
